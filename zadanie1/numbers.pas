@@ -7,23 +7,23 @@ type
 
 var
   Numbers: TNumbers;
-  i: Integer;
+  i, count, minVal, maxVal: Integer;
 
-procedure GenerateNumbers(var Table: TNumbers);
+procedure GenerateNumbers(var Table: TNumbers; minVal, maxVal, count: Integer);
 var
   i: Integer;
 begin
-  randomize; 
-  for i := 1 to 50 do
-    Table[i] := random(101);
+  randomize;
+  for i := 1 to count do
+    Table[i] := random(maxVal - minVal + 1) + minVal;
 end;
 
-procedure SortNumbers(var Table: TNumbers);
+procedure SortNumbers(var Table: TNumbers; count: Integer);
 var
   i, j, temp: Integer;
 begin
-  for i := 1 to 49 do
-    for j := 1 to 50 - i do
+  for i := 1 to count - 1 do
+    for j := 1 to count - i do
       if Table[j] > Table[j + 1] then
       begin
         temp := Table[j];
@@ -34,21 +34,40 @@ end;
 
 begin
   clrscr;
-  
-  writeln('Generating numbers...');
-  GenerateNumbers(Numbers);
+
+  write('Min value: ');
+  readln(minVal);
+  write('Max value: ');
+  readln(maxVal);
+
+  write('How many numbers (max 50): ');
+  readln(count);
+
+  writeln;
+
+  if count > 50 then count := 50;
+  if count < 1 then count := 1;
+
+  if minVal > maxVal then
+  begin
+    writeln('Error: min value cannot be greater than max value.');
+    readln;
+    halt;
+  end;
+
+  GenerateNumbers(Numbers, minVal, maxVal, count);
 
   writeln('Before sorting:');
-  for i := 1 to 50 do
+  for i := 1 to count do
     write(Numbers[i], ' ');
-    
+
   writeln;
-  
-  SortNumbers(Numbers);
+
+  SortNumbers(Numbers, count);
 
   writeln('After sorting:');
-  for i := 1 to 50 do
+  for i := 1 to count do
     write(Numbers[i], ' ');
-    
+
   writeln;
 end.
