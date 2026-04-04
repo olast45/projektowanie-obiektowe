@@ -11,3 +11,16 @@
 ❌ 4.5 5 testów jednostkowych testujące procedury 
 
 ❌ 5.0 Skrypt w bashu do uruchamiania aplikacji w Pascalu via docker 
+
+## ZADANIE 2
+
+✅ 3.0 Należy stworzyć jeden model z kontrolerem z produktami, zgodnie z
+CRUD (JSON)[Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/807cc023a8ed375c684e7c41f384b354bd308153)
+
+✅ 3.5 Należy stworzyć skrypty do testów endpointów via curl (JSON) [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/58a2f5f1b124eeee4f8558309f476b812b8c70dc)
+
+✅ 4.0 Należy stworzyć dwa dodatkowe kontrolery wraz z modelami  (JSON) [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/de032a3aa7167bdc62fc73c193794c5c7357fe09)
+
+❌ 4.5 Należy stworzyć widoki do wszystkich kontrolerów
+
+❌ 5.0 Stworzenie panelu administracyjnego
