@@ -24,3 +24,19 @@ CRUD (JSON)[Link do commita](https://github.com/olast45/projektowanie-obiektowe/
 ❌ 4.5 Należy stworzyć widoki do wszystkich kontrolerów
 
 ❌ 5.0 Stworzenie panelu administracyjnego
+
+## ZADANIE 3
+
+✅ 3.0 Należy stworzyć jeden kontroler wraz z danymi wyświetlanymi z
+listy na endpoint’cie w formacie JSON - Kotlin + Spring Boot [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/fb79fe461dd80bee859bc8048cfa2dd768c67583)
+
+✅ 3.5 Należy stworzyć klasę do autoryzacji (mock) jako Singleton w
+formie eager [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/f655f513922be14c3c05e82caa037dd459c56f23)
+
+✅ 4.0 Należy obsłużyć dane autoryzacji przekazywane przez użytkownika [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/9ba37d72c731e1d3ee8185efee6a2829545346f0)
+
+✅ 4.5 Należy wstrzyknąć singleton do głównej klasy via @Autowired lub
+kontruktor (constructor injection) [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/38bf0f204436ce91f3678882450ff6b3aa8de8a2)
+
+✅ 5.0 Obok wersji Eager do wyboru powinna być wersja Singletona w wersji
+lazy [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/0036529765fa04e32838f08ea0d907aec6f01214)
