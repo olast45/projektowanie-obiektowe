@@ -1,12 +1,14 @@
-package com.example.zadanie3.Service
+package com.example.zadanie3.service
 
 import org.springframework.stereotype.Service
 
-@Service
-class AuthService {
+class AuthService private constructor() {
+
+    companion object {
+        val instance = AuthService() 
+    }
 
     fun authenticate(username: String, password: String): Boolean {
         return username.isNotBlank() && password.isNotBlank()
     }
-
 }
