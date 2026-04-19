@@ -2,20 +2,27 @@ package controller
 
 import (
 	"net/http"
+	"myapp/model"
 
 	"github.com/labstack/echo/v4"
-	"myapp/service"
+	"gorm.io/gorm"
 )
 
-func GetWeather(c echo.Context) error {
+type WeatherController struct {
+	DB *gorm.DB
+}
+
+func (wc *WeatherController) GetWeather(c echo.Context) error {
 	city := c.Param("city")
 
-	data, err := service.GetWeatherByCity(city)
-	if err != nil {
-		return c.JSON(http.StatusInternalServerError, map[string]string{
-			"error": err.Error(),
+	var weather model.Weather
+
+	result := wc.DB.Where("city = ?", city).First(&weather)
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, map[string]string{
+			"error": "City not found",
 		})
 	}
 
-	return c.JSON(http.StatusOK, data)
+	return c.JSON(http.StatusOK, weather)
 }
