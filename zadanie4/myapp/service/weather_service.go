@@ -6,7 +6,9 @@ import (
 	"net/http"
 )
 
-func GetWeatherByCity(city string) (map[string]interface{}, error) {
+type WeatherService struct{}
+
+func (s WeatherService) GetWeatherByCity(city string) (map[string]interface{}, error) {
 	geoURL := fmt.Sprintf(
 		"https://geocoding-api.open-meteo.com/v1/search?name=%s&count=1",
 		city,
