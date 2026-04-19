@@ -40,3 +40,20 @@ kontruktor (constructor injection) [Link do commita](https://github.com/olast45/
 
 ✅ 5.0 Obok wersji Eager do wyboru powinna być wersja Singletona w wersji
 lazy [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/0036529765fa04e32838f08ea0d907aec6f01214)
+
+## ZADANIE 4
+
+✅ 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie
+miała kontroler Pogody, która pozwala na pobieranie danych o pogodzie
+(lub akcjach giełdowych) [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/ef0fa106ca731c74a674556263f997dd3b0bc699)
+
+✅ 3.5 Należy stworzyć model Pogoda (lub Giełda) wykorzystując gorm, a
+dane załadować z listy przy uruchomieniu [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/8dd952eb6eeb007f17162b34651d9471368661f0)
+
+✅ 4.0 Należy stworzyć klasę proxy, która pobierze dane z serwisu
+zewnętrznego podczas zapytania do naszego kontrolera [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/84e7fb81d0ce831ba75fc8e74a8f9100509189cc)
+
+❌ 4.5 Należy zapisać pobrane dane z zewnątrz do bazy danych 
+
+❌ 5.0 Należy rozszerzyć endpoint na więcej niż jedną lokalizację
+(Pogoda), lub akcje (Giełda) zwracając JSONa 
