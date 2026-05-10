@@ -25,7 +25,6 @@ products = [
 ]
 
 class Payment(BaseModel):
-    productId: int
     amount: float
     cardNumber: str
 

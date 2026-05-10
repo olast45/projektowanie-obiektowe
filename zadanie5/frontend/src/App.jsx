@@ -1,21 +1,43 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Products from "./components/Products";
 import Payment from "./components/Payments";
+import Cart from "./components/Cart";
 
 function App() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart((prev) => [...prev, product]);
+  };
+
+  const removeFromCart = (index) => {
+    setCart((prev) => prev.filter((_, i) => i !== index));
+  };
 
   return (
     <div style={styles.app}>
-
-      {!selectedProduct ? (
-        <Products onBuy={setSelectedProduct} />
-      ) : (
-        <Payment
-          product={selectedProduct}
-          onBack={() => setSelectedProduct(null)}
+      <Routes>
+        <Route
+          path="/"
+          element={<Products onBuy={addToCart} />}
         />
-      )}
+
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              removeFromCart={removeFromCart}
+            />
+          }
+        />
+
+        <Route
+          path="/payment"
+          element={<Payment cart={cart} />}
+        />
+      </Routes>
     </div>
   );
 }

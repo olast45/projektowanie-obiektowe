@@ -1,9 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Payment({ product, onBack }) {
+function Payment({ cart }) {
+  const navigate = useNavigate();
+
   const [cardNumber, setCardNumber] = useState("");
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const total = cart.reduce((sum, p) => sum + p.price, 0);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -11,12 +16,10 @@ function Payment({ product, onBack }) {
 
     const res = await fetch("http://127.0.0.1:8000/api/payments", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        productId: product.id,
-        amount: product.price,
+        items: cart,
+        amount: total,
         cardNumber
       })
     });
@@ -28,14 +31,14 @@ function Payment({ product, onBack }) {
 
   return (
     <div style={styles.card}>
-      <button style={styles.back} onClick={onBack}>
-        ← Back
+      {/* 🔙 BACK BUTTON */}
+      <button style={styles.back} onClick={() => navigate("/cart")}>
+        ← Back to cart
       </button>
 
       <h2>💳 Checkout</h2>
-      <p style={styles.product}>
-        Buying: <b>{product.name}</b> ({product.price} PLN)
-      </p>
+
+      <p>Total: <b>{total} PLN</b></p>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -52,10 +55,7 @@ function Payment({ product, onBack }) {
 
       {response && (
         <div style={styles.responseBox}>
-          <h3>Payment result</h3>
-          <p>
-            <b>Status:</b> {response.status}
-          </p>
+          <p><b>Status:</b> {response.status}</p>
           {response.message && <p>{response.message}</p>}
         </div>
       )}
@@ -70,20 +70,8 @@ const styles = {
     background: "#fff",
     boxShadow: "0 10px 25px rgba(0,0,0,0.12)"
   },
-  back: {
-    marginBottom: "10px",
-    border: "none",
-    background: "transparent",
-    cursor: "pointer",
-    color: "#2563eb",
-    fontWeight: "bold"
-  },
-  product: {
-    marginBottom: "10px",
-    color: "#475569"
-  },
   input: {
-    width: "90%",
+    width: "94%",
     padding: "12px",
     borderRadius: "10px",
     border: "1px solid #ddd",
@@ -99,6 +87,14 @@ const styles = {
     color: "white",
     fontWeight: "bold",
     cursor: "pointer"
+  },
+  back: {
+    marginBottom: "10px",
+    border: "none",
+    background: "transparent",
+    cursor: "pointer",
+    color: "#2563eb",
+    fontWeight: "bold"
   },
   responseBox: {
     marginTop: "20px",

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Products({ onBuy }) {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/products")
@@ -12,7 +14,7 @@ function Products({ onBuy }) {
 
   return (
     <div>
-      <h1 style={styles.title}>🛒 Products</h1>
+      <h1 style={styles.title}>Products</h1>
 
       <div style={styles.container}>
         {products.map((p) => (
@@ -20,8 +22,14 @@ function Products({ onBuy }) {
             <h3>{p.name}</h3>
             <p style={styles.price}>{p.price} PLN</p>
 
-            <button style={styles.button} onClick={() => onBuy(p)}>
-              Buy
+            <button
+              style={styles.button}
+              onClick={() => {
+                onBuy(p);
+                navigate("/cart");   
+              }}
+            >
+              Add to cart
             </button>
           </div>
         ))}
@@ -43,8 +51,7 @@ const styles = {
     padding: "16px",
     borderRadius: "14px",
     background: "#fff",
-    boxShadow: "0 6px 18px rgba(0,0,0,0.08)",
-    transition: "0.2s"
+    boxShadow: "0 6px 18px rgba(0,0,0,0.08)"
   },
   price: {
     color: "#64748b",
