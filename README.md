@@ -57,3 +57,26 @@ zewnętrznego podczas zapytania do naszego kontrolera [Link do commita](https://
 
 ❌ 5.0 Należy rozszerzyć endpoint na więcej niż jedną lokalizację
 (Pogoda), lub akcje (Giełda) zwracając JSONa 
+
+## ZADANIE 5
+
+✅ 3.0 W ramach projektu należy stworzyć komponenty Produkty oraz
+Płatności; komponent Produkty powinien pobierać listę produktów z
+aplikacji serwerowej, natomiast komponent Płatności powinien wysyłać
+dane płatności do aplikacji serwerowej. [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/647b5e975bcaace38dd03dc951e47224fa6a0bf4)
+
+✅ 3.5 Należy dodać komponent Koszyk wraz z osobnym widokiem; aplikacja
+powinna umożliwiać przechodzenie pomiędzy widokami przy użyciu
+routingu. [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/a983fba8bd8d909a086cc578dd21fb17c29bccaf)
+
+✅ 4.0 Dane pomiędzy komponentami, takimi jak Produkty, Koszyk i
+Płatności, powinny być przekazywane z wykorzystaniem React hooks, np.
+useState, useEffect lub useContext. - zrobione przy okazji dwóch pierwszych kroków
+
+✅ 4.5 Należy przygotować konfigurację umożliwiającą uruchomienie
+aplikacji klienckiej oraz serwerowej w kontenerach Docker za pomocą
+docker-compose. [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/a7199fc44c8059f7c733e40fec63d262427650e6)
+
+❌ 5.0 Należy wykorzystać bibliotekę axios do komunikacji z serwerem oraz
+skonfigurować obsługę CORS, aby frontend mógł poprawnie komunikować
+się z backendem.
