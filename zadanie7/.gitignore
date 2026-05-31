@@ -1,0 +1,9 @@
+MyVaporApp/db.sqlite
+MyVaporApp/.DS_Store
+MyVaporApp/.build
+MyVaporApp/Packages
+MyVaporApp/xcuserdata/
+MyVaporApp/DerivedData/
+MyVaporApp/.swiftpm/configuration/registries.json
+MyVaporApp/.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+MyVaporApp/.netrc
