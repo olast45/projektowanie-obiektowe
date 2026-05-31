@@ -80,3 +80,39 @@ docker-compose. [Link do commita](https://github.com/olast45/projektowanie-obiek
 ❌ 5.0 Należy wykorzystać bibliotekę axios do komunikacji z serwerem oraz
 skonfigurować obsługę CORS, aby frontend mógł poprawnie komunikować
 się z backendem.
+
+## ZADANIE 7
+
+✅ 3.0 Należy stworzyć kontroler wraz z modele Produktów zgodny z CRUD w
+ORM Fluent [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/d6e66ce67d5cffe53e9740afb51d1426776a051e)
+
+✅ 3.5 Należy stworzyć szablony w Leaf [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/62645bea329c892c162d3a2876e3b4f5ae9d9a6c)
+
+✅ 4.0 Należy stworzyć drugi model oraz kontroler Kategorii wraz z
+relacją [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/774ba125e1da700556dc432d3021b85f4ca24465)
+
+❌ 4.5 Należy wykorzystać Redis do przechowywania danych
+
+❌ 5.0 Wrzucić aplikację na heroku
+
+
+## ZADANIE 8
+
+✅ 3.0 Przetestuj formularz rejestracji użytkownika pod kątem walidacji
+pól obowiązkowych oraz zachowania aplikacji po wprowadzeniu
+niepoprawnego formatu adresu e-mail. [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/6f4da0e50848a88e3cb9892a85e1377be4b4950b)
+
+✅ 3.5 Przeprowadź testy bezpieczeństwa typu Cross-Site Scripting (XSS),
+próbując wstrzyknąć złośliwy kod JavaScript w aplikacji z Reactem [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/503cd16d19be0b85e85b5e5bb483e839121e7ed9)
+
+❌ 4.0 Przetestuj działanie koszyka zakupowego przy jednoczesnym otwarciu
+aplikacji w kilku osobnych kartach tej samej przeglądarki, sprawdzając
+spójność stanów zamówienia (aplikacja z zadania z React'em)
+
+❌ 4.5 Do zadania z React'a należy dodać formularz logowania. Następnie
+przeprowadź testy podatności na ataki typu Cross-Site Request Forgery
+(CSRF), próbując wymusić nieautoryzowaną zmianę ustawień konta
+spreparowanym linkiem, podczas gdy użytkownik posiada aktywną sesję w
+innej karcie.
+
+❌ 5.0 Stwórz scenariusz End-to-End w Playwright (minimum 50 asercji)
