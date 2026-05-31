@@ -29,8 +29,15 @@ struct ProductController: RouteCollection {
     }
 
     func create(req: Request) throws -> EventLoopFuture<Product> {
-        let product = try req.content.decode(Product.self)
-        return product.save(on: req.db).map { product }
+    let input = try req.content.decode(ProductInput.self)
+
+    let product = Product(
+        name: input.name,
+        price: input.price,
+        categoryID: input.categoryID
+    )
+
+    return product.save(on: req.db).map { product }
     }
 
     func update(req: Request) throws -> EventLoopFuture<Product> {
