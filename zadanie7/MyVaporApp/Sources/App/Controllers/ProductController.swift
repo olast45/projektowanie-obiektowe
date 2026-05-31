@@ -1,16 +1,22 @@
 import Vapor
 import Fluent
 
+struct ProductContext: Content {
+    let products: [Product]
+}
+
 struct ProductController: RouteCollection {
 
     func boot(routes: RoutesBuilder) throws {
-        let products = routes.grouped("products")
+    let products = routes.grouped("products")
 
-        products.get(use: index)
-        products.get(":id", use: show)
-        products.post(use: create)
-        products.put(":id", use: update)
-        products.delete(":id", use: delete)
+    products.get(use: index)
+    products.get("view", use: productsPage)
+
+    products.get(":id", use: show)
+    products.post(use: create)
+    products.put(":id", use: update)
+    products.delete(":id", use: delete)
     }
 
     func index(req: Request) throws -> EventLoopFuture<[Product]> {
@@ -45,4 +51,13 @@ struct ProductController: RouteCollection {
             .flatMap { $0.delete(on: req.db) }
             .transform(to: .ok)
     }
+
+    func productsPage(req: Request) async throws -> View {
+    let products = try await Product.query(on: req.db).all()
+
+    return try await req.view.render(
+        "products",
+        ProductContext(products: products)
+    )
+}
 }
