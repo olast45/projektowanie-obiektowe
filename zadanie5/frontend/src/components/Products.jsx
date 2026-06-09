@@ -6,7 +6,7 @@ function Products({ onBuy }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/products")
+    fetch("https://backend-ex10.onrender.com/api/products")
       .then((res) => res.json())
       .then(setProducts)
       .catch((err) => console.log(err));

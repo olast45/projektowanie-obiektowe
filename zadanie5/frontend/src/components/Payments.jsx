@@ -14,7 +14,7 @@ function Payment({ cart }) {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch("http://localhost:8000/api/payments", {
+    const res = await fetch("https://backend-ex10.onrender.com/api/payments", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
