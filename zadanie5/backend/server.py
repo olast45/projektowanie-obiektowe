@@ -8,7 +8,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://ex5-frontend.onrender.com"
+        "https://ex5-frontend.onrender.com",
+        "http://localhost:5173"
     ],
     allow_credentials=True,
     allow_methods=["*"],
