@@ -6,7 +6,7 @@ function Products({ onBuy }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://backend-ex10.onrender.com/api/products")
+    fetch("https://ex5-backend.onrender.com/api/products")
       .then((res) => res.json())
       .then(setProducts)
       .catch((err) => console.log(err));
