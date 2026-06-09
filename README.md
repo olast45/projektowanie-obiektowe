@@ -81,6 +81,22 @@ docker-compose. [Link do commita](https://github.com/olast45/projektowanie-obiek
 skonfigurować obsługę CORS, aby frontend mógł poprawnie komunikować
 się z backendem.
 
+## ZADANIE 6
+
+✅ 3.0 Należy skonfigurować husky + lint-staged uruchamianie lintowania
+przed commitem [Link do commita](https://github.com/olast45/projektowanie-obiektowe/commit/49f26a8a80d34824dfd96ffca38a2ee37b4f2b8a)
+
+❌ 3.5 Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod
+aplikacji klienckiej)
+
+❌ 4.0 Przeskanować oraz naprawić dowolny projekt open source narzędziem
+CodeQL https://codeql.github.com/
+
+❌ 4.5 Należy usunąć problemy typu Code Smell w kodzie w Sonarze (kotlin,
+go, js). Należy dodać badge z Sonara
+
+❌ 5.0 Skonfigurować Github Actions z linterem oraz CodeQL
+
 ## ZADANIE 7
 
 ✅ 3.0 Należy stworzyć kontroler wraz z modele Produktów zgodny z CRUD w
